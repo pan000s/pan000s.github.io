@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ถึงออมแอม 💖</title>
   <style>
     body {
@@ -30,29 +30,11 @@
       white-space: pre-line;
     }
 
-    .image-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      margin: 20px 0;
-    }
-
-    .image-grid img {
-      width: 250px;
-      border-radius: 20px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease;
-    }
-
-    .image-grid img:hover {
-      transform: scale(1.05);
-    }
-
     button {
       background-color: #ff6fa1;
       color: white;
       padding: 15px 30px;
+      margin: 10px;
       border: none;
       border-radius: 30px;
       font-size: 1em;
@@ -64,8 +46,8 @@
       background-color: #ff4f8a;
     }
 
-    #secret-message {
-      margin-top: 20px;
+    #secret-message, .answer {
+      margin-top: 15px;
       font-size: 1.4em;
       color: #c9184a;
       display: none;
@@ -118,16 +100,38 @@
 จากป่าน 🥰
   </p>
 
+  <!-- ปุ่มเซอร์ไพรส์ข้อความ -->
   <button onclick="showMessage()">คลิกสิ 💌</button>
   <div id="secret-message">รักมากนะรู้ไหม ❤️</div>
 
-  <!-- วิดีโอจาก Google Drive -->
+  <!-- คำถามน่ารัก -->
+  <button onclick="showAnswer('answer1')">❓ จำได้ไหมว่าเราเจอกันครั้งแรกที่ไหน?</button>
+  <div class="answer" id="answer1">คำตอบคือ...ที่อบรม ❤️</div>
+
+  <button onclick="showAnswer('answer2')">❓ เธอเรียกเค้าว่าอะไรบ่อยสุด?</button>
+  <div class="answer" id="answer2">คำตอบคือ... อ้วน 😝</div>
+
+  <button onclick="showAnswer('answer3')">❓ ถ้าเค้าให้เลือกของขวัญ เค้าอยากได้อะไร?</button>
+  <div class="answer" id="answer3">คำตอบคือ... ให้เธอรักเค้าก็พอ 🥹💗</div>
+
+  <!-- วิดีโอ Google Drive -->
   <iframe src="https://drive.google.com/file/d/1bdQI-u0WHyJAVYynuLwGq9vCqE2RvvtE/preview" 
           width="300" height="180" allow="autoplay" frameborder="0" allowfullscreen></iframe>
+
+  <!-- เสียงเปิดอัตโนมัติ -->
+  <audio autoplay loop>
+    <source src="yourmusic.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 
   <script>
     function showMessage() {
       document.getElementById('secret-message').style.display = 'block';
+    }
+
+    function showAnswer(id) {
+      const el = document.getElementById(id);
+      el.style.display = 'block';
     }
 
     // ปล่อยหัวใจลอย
