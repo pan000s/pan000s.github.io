@@ -24,6 +24,11 @@
       font-size: 2.5em;
     }
 
+    h2 {
+      color: #c9184a;
+      margin-top: 40px;
+    }
+
     p {
       font-size: 1.2em;
       color: #333;
@@ -104,15 +109,19 @@
   <button onclick="showMessage()">คลิกสิ 💌</button>
   <div id="secret-message">รักมากนะรู้ไหม ❤️</div>
 
-  <!-- คำถามน่ารัก -->
-  <button onclick="showAnswer('answer1')">❓ จำได้ไหมว่าเราเจอกันครั้งแรกที่ไหน?</button>
-  <div class="answer" id="answer1">คำตอบคือ...ที่อบรม ❤️</div>
+  <!-- หัวข้อคำถาม -->
+  <h2>คำถามน่ารัก ๆ ให้ตอบเล่น ๆ 💭</h2>
 
-  <button onclick="showAnswer('answer2')">❓ เธอเรียกเค้าว่าอะไรบ่อยสุด?</button>
-  <div class="answer" id="answer2">คำตอบคือ... อ้วน 😝</div>
+  <div style="max-width: 500px;">
+    <button onclick="showAnswer('answer1')">❓ จำได้ไหมว่าเราเจอกันครั้งแรกที่ไหน?</button>
+    <div class="answer" id="answer1">คำตอบคือ...ที่อบรม ❤️</div>
 
-  <button onclick="showAnswer('answer3')">❓ ถ้าเค้าให้เลือกของขวัญ เค้าอยากได้อะไร?</button>
-  <div class="answer" id="answer3">คำตอบคือ... ให้เธอรักเค้าก็พอ 🥹💗</div>
+    <button onclick="showAnswer('answer2')">❓ เธอเรียกเค้าว่าอะไรบ่อยสุด?</button>
+    <div class="answer" id="answer2">คำตอบคือ... อ้วน 😝</div>
+
+    <button onclick="showAnswer('answer3')">❓ ถ้าเค้าให้เลือกของขวัญ เค้าอยากได้อะไร?</button>
+    <div class="answer" id="answer3">คำตอบคือ... ให้เธอรักเค้าก็พอ 🥹💗</div>
+  </div>
 
   <!-- วิดีโอ Google Drive -->
   <iframe src="https://drive.google.com/file/d/1bdQI-u0WHyJAVYynuLwGq9vCqE2RvvtE/preview" 
