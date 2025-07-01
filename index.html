@@ -5,13 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ถึงออมแอม 💖</title>
   <style>
+    :root {
+      --pink-bg: linear-gradient(to bottom right, #ffe4ec, #ffe1f0);
+      --primary-color: #d63384;
+      --button-color: #ff6fa1;
+      --button-hover: #ff4f8a;
+      --text-dark: #333;
+    }
+
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom right, #ffe4ec, #ffe1f0);
+      background: var(--pink-bg);
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       text-align: center;
       min-height: 100vh;
       margin: 0;
@@ -20,40 +28,44 @@
     }
 
     h1 {
-      color: #d63384;
-      font-size: 2.5em;
+      color: var(--primary-color);
+      font-size: 2em;
+      margin-top: 20px;
     }
 
     h2 {
       color: #c9184a;
       margin-top: 40px;
+      font-size: 1.4em;
     }
 
     p {
-      font-size: 1.2em;
-      color: #333;
+      font-size: 1em;
+      color: var(--text-dark);
       white-space: pre-line;
+      max-width: 90vw;
     }
 
     button {
-      background-color: #ff6fa1;
+      background-color: var(--button-color);
       color: white;
-      padding: 15px 30px;
+      padding: 12px 24px;
       margin: 10px;
       border: none;
       border-radius: 30px;
       font-size: 1em;
       cursor: pointer;
       transition: background 0.3s ease;
+      max-width: 90vw;
     }
 
     button:hover {
-      background-color: #ff4f8a;
+      background-color: var(--button-hover);
     }
 
     #secret-message, .answer {
       margin-top: 15px;
-      font-size: 1.4em;
+      font-size: 1.2em;
       color: #c9184a;
       display: none;
       animation: pop 0.5s ease-in-out;
@@ -67,6 +79,9 @@
     iframe {
       margin-top: 20px;
       border-radius: 10px;
+      width: 90vw;
+      max-width: 560px;
+      height: 315px;
     }
 
     .heart {
@@ -124,8 +139,7 @@
   </div>
 
   <!-- วิดีโอ Google Drive -->
-  <iframe src="https://drive.google.com/file/d/1bdQI-u0WHyJAVYynuLwGq9vCqE2RvvtE/preview" 
-          width="300" height="180" allow="autoplay" frameborder="0" allowfullscreen></iframe>
+  <iframe src="https://drive.google.com/file/d/1bdQI-u0WHyJAVYynuLwGq9vCqE2RvvtE/preview" allow="autoplay" frameborder="0" allowfullscreen></iframe>
 
   <!-- เสียงเปิดอัตโนมัติ -->
   <audio autoplay loop>
