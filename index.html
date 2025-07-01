@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ถึงออมแอม 💖</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #ffe4ec, #ffe1f0);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      color: #d63384;
+      font-size: 2.5em;
+    }
+    p {
+      font-size: 1.2em;
+      color: #333;
+    }
+    img {
+      width: 300px;
+      border-radius: 20px;
+      margin: 20px 0;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    button {
+      background-color: #ff6fa1;
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background-color: #ff4f8a;
+    }
+    #secret-message {
+      margin-top: 20px;
+      font-size: 1.4em;
+      color: #c9184a;
+      display: none;
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    iframe {
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>สุขสันต์ครบรอบ 1 ปี 6 เดือนนะ 💖</h1>
+  <p>ถึงออมแอม ขอบคุณที่อยู่เคียงข้างกันตลอดมา แม้จะอยู่ไกล แต่หัวใจเรายังใกล้กันเสมอ 🥰</p>
+  <img src="https://i.imgur.com/XP2BE7q.jpeg" alt="รูปตัวอย่าง">
+  <button onclick="showMessage()">คลิกสิ 💌</button>
+  <div id="secret-message">รักมากนะรู้ไหม ❤️</div>
+
+  <iframe width="300" height="180" src="https://www.youtube.com/embed/pRpeEdMmmQ0?autoplay=1&loop=1&playlist=pRpeEdMmmQ0" 
+    title="เพลงรัก" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+  <script>
+    function showMessage() {
+      document.getElementById('secret-message').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
