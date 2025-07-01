@@ -16,22 +16,39 @@
       min-height: 100vh;
       margin: 0;
       padding: 20px;
+      overflow-x: hidden;
     }
+
     h1 {
       color: #d63384;
       font-size: 2.5em;
     }
+
     p {
       font-size: 1.2em;
       color: #333;
       white-space: pre-line;
     }
-    img {
-      width: 300px;
-      border-radius: 20px;
+
+    .image-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
       margin: 20px 0;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
+
+    .image-grid img {
+      width: 250px;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .image-grid img:hover {
+      transform: scale(1.05);
+    }
+
     button {
       background-color: #ff6fa1;
       color: white;
@@ -42,23 +59,43 @@
       cursor: pointer;
       transition: background 0.3s ease;
     }
+
     button:hover {
       background-color: #ff4f8a;
     }
+
     #secret-message {
       margin-top: 20px;
       font-size: 1.4em;
       color: #c9184a;
       display: none;
-      animation: fadeIn 1s ease-in-out;
+      animation: pop 0.5s ease-in-out;
     }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+
+    @keyframes pop {
+      0% { transform: scale(0.5); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
     }
+
     iframe {
       margin-top: 20px;
       border-radius: 10px;
+    }
+
+    .heart {
+      position: fixed;
+      font-size: 24px;
+      color: #ff69b4;
+      animation: floatUp 4s linear forwards;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes floatUp {
+      to {
+        transform: translateY(-110vh);
+        opacity: 0;
+      }
     }
   </style>
 </head>
@@ -67,7 +104,7 @@
   <p>
 ถึงเธอ
 
-เค้าอาจจะไม่เก่งเรื่องเซอร์ไพรส์ หรือทำอะไรให้ดูหวือหวา
+เค้าอาจจะไม่เก่งเรื่องเซอร์ไพรส์ หรือทำอะไรให้หวานๆเหมือนคนอื่นไม่ได้
 เค้าอาจจะทำได้ไม่ค่อยดีเท่าไหร่...แต่สิ่งที่มั่นใจมากที่สุดเลย คือ
 
 เค้ารักเธอมาก ๆ จริง ๆ นะ 🫶
@@ -80,7 +117,14 @@
 คิดถึงนะ
 จากป่าน 🥰
   </p>
-  <img src="https://i.imgur.com/XP2BE7q.jpeg" alt="รูปตัวอย่าง">
+
+  <div class="image-grid">
+    <img src="https://i.imgur.com/XP2BE7q.jpeg" alt="รูปตัวอย่าง">
+    <img src="dab6cf2b-9a92-471e-b0f7-c04b3dcd28a7.jpg" alt="ออมแอมแลบลิ้น">
+    <img src="94d7c96e-63e7-4149-8c7c-c43cd608db36.jpg" alt="ออมแอมจุ๊บ">
+    <img src="bc05e0db-2827-44ab-b3a7-ead90d25b0ee.jpg" alt="ออมแอมฟิลเตอร์ตลก">
+  </div>
+
   <button onclick="showMessage()">คลิกสิ 💌</button>
   <div id="secret-message">รักมากนะรู้ไหม ❤️</div>
 
@@ -91,6 +135,17 @@
     function showMessage() {
       document.getElementById('secret-message').style.display = 'block';
     }
+
+    // ปล่อยหัวใจลอย
+    setInterval(() => {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerText = "💖";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.top = "100vh";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 4000);
+    }, 500);
   </script>
 </body>
 </html>
